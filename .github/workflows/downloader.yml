@@ -1,6 +1,12 @@
 name: Downloader
-
-on: workflow_dispatch
+on:
+  workflow_call:
+    inputs:
+      download_link:
+        description: 'An url to a file which will be downloaded and added to the repository'
+        default: 'https://url-to-file.io'
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -14,7 +20,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Download
-      run: wget https://plugins.jetbrains.com/files/6317/487907/lombok-233.14475.39.zip?updateId=487907&pluginId=6317&family=INTELLIJ
+      run: wget ${{ inputs.download_link }}
 
     - uses: stefanzweifel/git-auto-commit-action@v5
       with:
