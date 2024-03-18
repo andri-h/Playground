@@ -1,5 +1,7 @@
 name: Downloader
 
+on: issue_comment
+
 permissions:
   contents: write
 
