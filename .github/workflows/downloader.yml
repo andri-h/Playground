@@ -1,6 +1,6 @@
 name: Downloader
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       download_link:
         description: 'An url to a file which will be downloaded and added to the repository'
