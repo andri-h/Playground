@@ -1,6 +1,6 @@
 name: Downloader
 
-on: issue_comment
+on: workflow_dispatch
 
 permissions:
   contents: write
