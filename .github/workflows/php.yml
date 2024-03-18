@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Download
-      run: wget https://plugins.jetbrains.com/plugin/download?rel=true&updateId=502595
+      run: wget https://plugins.jetbrains.com/files/6317/502595/lombok-233.14808.21.zip?updateId=502595&pluginId=6317&family=INTELLIJ
 
     - uses: stefanzweifel/git-auto-commit-action@v5
       with:
