@@ -1,0 +1,25 @@
+name: Downloader
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Download
+      run: wget https://plugins.jetbrains.com/plugin/download?rel=true&updateId=502595
+
+    - uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: Commit downloaded files
